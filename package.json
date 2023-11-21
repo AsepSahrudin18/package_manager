@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start-dev": "webpack serve"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "html-webpack-plugin": "^5.5.3",
     "jquery": "^3.7.1",
     "moment": "^2.29.4"
   },
@@ -19,6 +21,7 @@
     "css-loader": "^6.8.1",
     "style-loader": "^3.3.3",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }

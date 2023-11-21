@@ -11,6 +11,7 @@
 // };
 
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -19,6 +20,14 @@ module.exports = {
         filename: 'bundle.js'
     },
     mode: 'production',
+    devServer: {
+        client: {
+            overlay: {
+                errors: true,
+                warnings: false,
+            },
+        },
+    },
     module: {
         rules: [
             {
@@ -45,9 +54,18 @@ module.exports = {
                         }
                     }
                 ]
-            }
-        ]
+            },
+
+        ],
     },
 
-
+    /* plugin */
+    plugins: [
+        /* HTML Webpack Plugin */
+        new HtmlWebpackPlugin({
+            // template: './index.html',
+            template: './src/template.html',
+            filename: 'index.html',
+        }),
+    ],
 }
